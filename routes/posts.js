@@ -97,7 +97,7 @@ router.post("/addOrder", async (req, res) => {
     date,
     year,
     status,
-    uid: "623dc6d8b9f7291240b9adc1",
+    uid,
   });
   try {
     const savedOrder = await orders.save();
