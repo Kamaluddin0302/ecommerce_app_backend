@@ -66,7 +66,7 @@ router.post("/addCategory", async (req, res) => {
   console.log(req.body);
 
   const CategoryExist = await Category.findOne({
-    Categoryname: req.body.Categoryname,
+    category: req.body.category,
   });
   if (CategoryExist)
     return res.status(400).send({
