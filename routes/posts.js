@@ -5,7 +5,22 @@ const Category = require("./../modal/Category");
 const products = require("./../modal/addproduct");
 const Orders = require("./../modal/addorder");
 
-router.get("/", verify, (req, res) => {
+router.post("/", (req, res) => {
+  try {
+    res.send({
+      posts: {
+        title: "my first pet",
+        description: "random data you shoud not access",
+      },
+    });
+  } catch (error) {
+    res.send({
+      message: "dkmmkm",
+    });
+  }
+});
+
+router.get("/", (req, res) => {
   try {
     res.send({
       posts: {
