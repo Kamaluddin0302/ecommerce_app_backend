@@ -92,4 +92,21 @@ router.put("/updateproduct/:id", async (req, res) => {
   }
 });
 
+router.delete("/deleteproduct/:id", async (req, res) => {
+  console.log(req.body);
+  try {
+    const getproduct = await products.findOneAndDelete({ _id: req.params.id });
+
+    res.send({
+      posts: getproduct,
+      result: "success",
+    });
+  } catch (error) {
+    res.send({
+      message: error.message,
+      result: "error",
+    });
+  }
+});
+
 module.exports = router;
