@@ -66,9 +66,9 @@ router.put("/updateorder/:id", async (req, res) => {
 });
 
 router.put("/updateproduct/:id", async (req, res) => {
-  console.log(req.params.id);
+  console.log(req.body);
   try {
-    const getproduct = await Orders.findOneAndUpdate(
+    const getproduct = await products.findOneAndUpdate(
       { _id: req.params.id },
       req.body
     );
