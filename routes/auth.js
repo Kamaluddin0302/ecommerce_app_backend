@@ -69,7 +69,7 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({ _id: user._id }, "secertkey");
     res
       .header("auth-token", token)
-      .send({ result: " success", token: token, id: user._id });
+      .send({ result: " success", token: token, id: user._id, user: user });
   } else {
     return res
       .status(401)
