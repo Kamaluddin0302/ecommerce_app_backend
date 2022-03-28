@@ -65,4 +65,22 @@ router.put("/updateorder/:id", async (req, res) => {
   }
 });
 
+router.put("/updateproduct/:id", async (req, res) => {
+  console.log(req.params.id);
+  try {
+    const getproduct = await Orders.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body
+    );
+
+    res.send({
+      posts: getproduct,
+    });
+  } catch (error) {
+    res.send({
+      message: error.message,
+    });
+  }
+});
+
 module.exports = router;
