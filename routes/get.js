@@ -11,10 +11,12 @@ router.get("/getproduct", async (req, res) => {
 
     res.send({
       posts: getproduct,
+      result: "success",
     });
   } catch (error) {
     res.send({
       message: error.message,
+      result: "error",
     });
   }
 });
@@ -25,10 +27,12 @@ router.get("/getcategory", async (req, res) => {
 
     res.send({
       posts: getcategory,
+      result: "success",
     });
   } catch (error) {
     res.send({
       message: error.message,
+      result: "error",
     });
   }
 });
@@ -43,6 +47,7 @@ router.get("/getorder", async (req, res) => {
   } catch (error) {
     res.send({
       message: error.message,
+      result: "error",
     });
   }
 });
@@ -57,10 +62,12 @@ router.put("/updateorder/:id", async (req, res) => {
 
     res.send({
       posts: getorder,
+      result: "success",
     });
   } catch (error) {
     res.send({
       message: error.message,
+      result: "error",
     });
   }
 });
@@ -75,10 +82,12 @@ router.put("/updateproduct/:id", async (req, res) => {
 
     res.send({
       posts: getproduct,
+      result: "success",
     });
   } catch (error) {
     res.send({
       message: error.message,
+      result: "error",
     });
   }
 });
