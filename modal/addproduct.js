@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
     require: true,
   },
   Product_Price: {
-    type: Number,
+    type: String,
     require: true,
   },
   Product_Catagery: {
