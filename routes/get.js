@@ -58,7 +58,7 @@ router.put("/updateorder/:id", async (req, res) => {
     const getorder = await Orders.findOneAndUpdate(
       { _id: req.params.id },
       req.query
-    );  
+    );
 
     res.send({
       posts: getorder,
@@ -93,6 +93,23 @@ router.put("/updateproduct/:id", async (req, res) => {
 });
 
 router.delete("/deleteproduct/:id", async (req, res) => {
+  console.log(req.body);
+  try {
+    const getproduct = await products.findOneAndDelete({ _id: req.params.id });
+
+    res.send({
+      posts: getproduct,
+      result: "success",
+    });
+  } catch (error) {
+    res.send({
+      message: error.message,
+      result: "error",
+    });
+  }
+});
+
+router.delete("/deleteCategory/:id", async (req, res) => {
   console.log(req.body);
   try {
     const getproduct = await products.findOneAndDelete({ _id: req.params.id });
