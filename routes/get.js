@@ -53,12 +53,12 @@ router.get("/getorder", async (req, res) => {
 });
 
 router.put("/updateorder/:id", async (req, res) => {
-  console.log(req.params.id);
+  console.log(req.query);
   try {
     const getorder = await Orders.findOneAndUpdate(
       { _id: req.params.id },
       req.query
-    );
+    );  
 
     res.send({
       posts: getorder,
